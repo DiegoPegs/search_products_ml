@@ -1,0 +1,8 @@
+.mdl-card__media {
+  background-color: white !important;
+  margin: auto;
+}
+
+.item {
+  min-height: 380px;
+}
