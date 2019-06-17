@@ -40,8 +40,9 @@ class Product extends Component {
 
     renderContent() {
         const { data } = this.state
-        
+        const NumberFormat = require('react-number-format');
         return (
+            
             <Fragment>
                 <div className="mdl-cell mdl-cell--12-col">
                     <Link className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" to={`/`}>
@@ -59,7 +60,8 @@ class Product extends Component {
                             <p><b>Quantidade de Itens:</b> {data.available_quantity}</p>
                             <p><b>Garantia:</b> {data.warranty}</p>
 
-                            <p><b>Valor:</b> R$ {data.price}</p>
+                            
+                            <p><b>Valor:</b> <NumberFormat value={data.price} displayType={'text'} decimalScale={2} fixedDecimalScale={true} decimalSeparator=',' thousandSeparator='.' prefix={'R$'} renderText={value => <span>{value}</span>} /></p>
                             <p><b>Localização do Vendedor:</b> {data.seller_address.city.name}</p>
                             <Button title="Comprar" ></Button>
 

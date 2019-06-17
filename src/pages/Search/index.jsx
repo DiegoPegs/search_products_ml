@@ -31,6 +31,7 @@ class Search extends Component {
     }
 
     renderItem(item) {
+        const NumberFormat = require('react-number-format');
         return (
             <div className="mdl-cell mdl-cell--4-col" key={item.id}>
                 <div className="demo-card-square mdl-card mdl-shadow--2dp item">
@@ -43,7 +44,8 @@ class Search extends Component {
                     </div>
 
                     <div className="mdl-card__supporting-text">
-                        <p><b>Valor:</b> R$ {item.price}</p>
+                     
+                        <p><b>Valor:</b> <NumberFormat value={item.price} decimalScale={2} fixedDecimalScale={true} displayType={'text'} decimalSeparator=',' thousandSeparator='.' prefix={'R$'} renderText={value => <span>{value}</span>} /></p>
                     </div>
                     <div className="mdl-card__actions mdl-card--border">
                         <Link className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" to={`/product/${item.id}`}>
