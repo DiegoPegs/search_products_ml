@@ -6,7 +6,7 @@ import Product from './pages/Product'
 
 const Routes = () => {
     return (
-        <BrowserRouter basename="/">
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Switch>
                 <Route exact path='/' component={Search} />
                 <Route exact path='/product/:id' component={Product} />
