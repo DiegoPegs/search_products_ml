@@ -19,7 +19,7 @@ class Search extends Component {
 
     onSearch(event) {
         const value = event.currentTarget.value
-        
+
         if (value.length > 3) {
             api.searchProduct(value).then(data => {
                 this.setState({
@@ -44,7 +44,7 @@ class Search extends Component {
                     </div>
 
                     <div className="mdl-card__supporting-text">
-                     
+
                         <p><b>Valor:</b> <NumberFormat value={item.price} decimalScale={2} fixedDecimalScale={true} displayType={'text'} decimalSeparator=',' thousandSeparator='.' prefix={'R$'} renderText={value => <span>{value}</span>} /></p>
                     </div>
                     <div className="mdl-card__actions mdl-card--border">
@@ -59,7 +59,11 @@ class Search extends Component {
     render() {
         return (
             <Fragment>
-                <input type="text" onChange={this.onSearch} />
+                <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label divBusca">
+                    <input type="text" className="mdl-textfield__input" onChange={this.onSearch} />
+                    <label className="mdl-textfield__label" htmlFor="sample3">Comece sua busca...</label>
+                </div>
+
                 <div>
                     <div className="mdl-grid">
                         {this.state.results.map(this.renderItem)}

@@ -6,3 +6,10 @@
 .item {
   min-height: 380px;
 }
+
+.divBusca {
+  width: 100%;
+  display: block;
+  margin-left: 15px;
+  margin-right: 15px;
+}
